@@ -68,7 +68,7 @@ module.exports.updateJob = function(req, res) {
       return;
     }
 
-    if (res.body) {
+    if (req.body) {
       if (req.body.title)
         job.title = req.body.title;
       if (req.body.salary)

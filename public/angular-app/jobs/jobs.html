@@ -1,3 +1,51 @@
+<div class="alert alert-danger" role="alert" ng-if="vm.error">{{vm.error}}</div>
+<div class="alert alert-success" role="alert" ng-if="vm.message">{{vm.message}}</div>
+
+<form class="mt-4" ng-submit="vm.createJob()">
+  <div class="form-group row">
+    <label class="col-sm-2 col-form-label">Title</label>
+    <div class="col-sm-8">
+      <input ng-value="vm.job.title" ng-model="vm.title" class="form-control" />
+    </div>
+  </div>
+  <div class="form-group row">
+    <label class="col-sm-2 col-form-label">Salary</label>
+    <div class="col-sm-8">
+      <input type="number" ng-value="vm.job.salary" ng-model="vm.salary" class="form-control" />
+    </div>
+  </div>
+  <div class="form-group row">
+    <label class="col-sm-2 col-form-label">Description</label>
+    <div class="col-sm-8">
+      <input ng-value="vm.job.description" ng-model="vm.description" class="form-control" />
+    </div>
+  </div>
+  <div class="form-group row">
+    <label class="col-sm-2 col-form-label">Experience</label>
+    <div class="col-sm-8">
+      <input ng-value="vm.job.experience" ng-model="vm.experience" class="form-control" />
+    </div>
+  </div>
+  <div class="form-group row">
+    <label class="col-sm-2 col-form-label">Skills</label>
+    <div class="col-sm-8">
+      <input ng-value="vm.job.skills.join(', ')" ng-model="vm.skills" class="form-control" />
+    </div>
+  </div>
+  <div class="form-group row">
+    <label class="col-sm-2 col-form-label">Post Date</label>
+    <div class="col-sm-8">
+      <input ng-value="vm.job.postDate | date:'MM/dd/yyyy'" ng-model="vm.postDate" class="form-control" />
+    </div>
+  </div>
+  <div class="form-group row">
+      <label class="col-sm-2 col-form-label"></label>
+      <div class="col-sm-2">
+        <input type="submit" value="Create" class="btn btn-success" />
+      </div>
+    </div>
+</form>
+
 <h2>List jobs</h2>
 
 <div class="table-responsive">
@@ -16,9 +64,8 @@
         <td>{{job.salary | currency: '$'}}</td>
         <td>{{job.postDate | date}}</td>
         <td>
-          <a href="#!/jobs/{{job._id}}">Detail</a> - 
-          <a href="#!/jobs/{{job._id}}/edit">Edit</a> - 
-          <a method="delete" href="#!/jobs/{{job._id}}">Delete</a>
+          <a class="text-info" href="#!/jobs/{{job._id}}">Detail</a> -
+          <a class="text-danger" ng-click="vm.deleteJob(job._id)" href="javascript:">Delete</a>
         </td>
       </tr>
     </tbody>

@@ -1,44 +1,47 @@
+<div class="alert alert-danger" role="alert" ng-if="vm.error">{{vm.error}}</div>
+<div class="alert alert-success" role="alert" ng-if="vm.message">{{vm.message}}</div>
+
 <h2>Job Detail</h2>
 
 <form class="mt-4" ng-submit="vm.updateJob()">
   <div class="form-group row">
-    <label class="col-sm-1 col-form-label">Title</label>
-    <div class="col-sm-4">
-      <input ng-value="vm.job.title" ng-model="vm.job.title" class="form-control" />
+    <label class="col-sm-2 col-form-label">Title</label>
+    <div class="col-sm-8">
+      <input ng-value="vm.job.title" ng-model="vm.title" class="form-control" />
     </div>
   </div>
   <div class="form-group row">
-    <label class="col-sm-1 col-form-label">Salary</label>
-    <div class="col-sm-4">
-      <input ng-value="vm.job.salary" ng-model="vm.job.salary" class="form-control" />
+    <label class="col-sm-2 col-form-label">Salary</label>
+    <div class="col-sm-8">
+      <input type="number" ng-value="vm.job.salary" ng-model="vm.salary" class="form-control" />
     </div>
   </div>
   <div class="form-group row">
-    <label class="col-sm-1 col-form-label">Description</label>
-    <div class="col-sm-4">
-      <input ng-value="vm.job.description" ng-model="vm.job.description" class="form-control" />
+    <label class="col-sm-2 col-form-label">Description</label>
+    <div class="col-sm-8">
+      <input ng-value="vm.job.description" ng-model="vm.description" class="form-control" />
     </div>
   </div>
   <div class="form-group row">
-    <label class="col-sm-1 col-form-label">Experience</label>
-    <div class="col-sm-4">
-      <input ng-value="vm.job.experience" ng-model="vm.job.experience" class="form-control" />
+    <label class="col-sm-2 col-form-label">Experience</label>
+    <div class="col-sm-8">
+      <input ng-value="vm.job.experience" ng-model="vm.experience" class="form-control" />
     </div>
   </div>
   <div class="form-group row">
-    <label class="col-sm-1 col-form-label">Skills</label>
-    <div class="col-sm-4">
-      <input ng-value="vm.job.skills.join(', ')" ng-model="vm.job.skills" class="form-control" />
+    <label class="col-sm-2 col-form-label">Skills</label>
+    <div class="col-sm-8">
+      <input ng-value="vm.job.skills.join(', ')" ng-model="vm.skills" class="form-control" />
     </div>
   </div>
   <div class="form-group row">
-    <label class="col-sm-1 col-form-label">Post Date</label>
-    <div class="col-sm-4">
-      <input ng-value="vm.job.postDate | date:'MM/dd/yyyy'" ng-model="vm.job.postDate" class="form-control" />
+    <label class="col-sm-2 col-form-label">Post Date</label>
+    <div class="col-sm-8">
+      <input ng-value="vm.job.postDate | date:'MM/dd/yyyy'" ng-model="vm.postDate" class="form-control" />
     </div>
   </div>
   <div class="form-group row">
-      <label class="col-sm-1 col-form-label"></label>
+      <label class="col-sm-2 col-form-label"></label>
       <div class="col-sm-2">
         <input type="submit" value="Update" class="btn btn-success" />
       </div>
